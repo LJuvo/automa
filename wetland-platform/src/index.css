@@ -1,72 +1,197 @@
+/* ─────────────────────────────────────────────────────────
+ * Wetland Platform — Design System v2
+ * OKLCH colors · 4pt spacing · 1.25 type ratio · surface elevation
+ * ───────────────────────────────────────────────────────── */
+
 @import "tailwindcss";
 
+/* ─── Semantic Tokens (OKLCH · cyan-teal brand, cool-cast neutrals) ─── */
 @theme {
-  --color-pri: #0e7490;
-  --color-pri-d: #155e75;
-  --color-pri-l: #cffafe;
-  --color-acc: #0891b2;
-  --color-bg: #f1f5f9;
-  --color-panel: #ffffff;
-  --color-text: #1e293b;
-  --color-muted: #64748b;
-  --color-bd: #e2e8f0;
-  --color-danger: #dc2626;
-  --color-warn: #ea580c;
-  --color-success: #16a34a;
-  --color-info: #2563eb;
-  --color-purple: #7c3aed;
-  --color-amber: #d97706;
+  /* Primary — teal-cyan industrial brand */
+  --brand-50:  oklch(97% 0.02 190);
+  --brand-100: oklch(92% 0.04 190);
+  --brand-200: oklch(85% 0.07 190);
+  --brand-300: oklch(75% 0.10 190);
+  --brand-400: oklch(65% 0.13 190);
+  --brand-500: oklch(55% 0.15 190);   /* primary action */
+  --brand-600: oklch(47% 0.14 195);   /* hover, pressed */
+  --brand-700: oklch(40% 0.12 195);   /* deep header */
+  --brand-800: oklch(34% 0.10 200);
+  --brand-900: oklch(28% 0.08 200);
+
+  /* Neutrals — cool cast (0.01 chroma hue 220)  */
+  --neutral-50:  oklch(97.5% 0.01 220);   /* page bg */
+  --neutral-100: oklch(95%   0.012 220);  /* subtle bg */
+  --neutral-200: oklch(90%   0.015 220);  /* divider */
+  --neutral-300: oklch(82%   0.015 220);  /* border */
+  --neutral-400: oklch(72%   0.015 220);  /* placeholder */
+  --neutral-500: oklch(60%   0.015 220);  /* secondary text */
+  --neutral-600: oklch(48%   0.015 220);  /* body text light */
+  --neutral-700: oklch(38%   0.015 220);  /* body text */
+  --neutral-800: oklch(28%   0.015 220);  /* strong text */
+  --neutral-900: oklch(20%   0.015 220);  /* darkest text */
+
+  /* Semantic status */
+  --status-success: oklch(62% 0.17 145);
+  --status-warn:    oklch(68% 0.17 75);
+  --status-danger:   oklch(58% 0.20 25);
+  --status-info:    oklch(58% 0.17 230);
+
+  /* Surfaces */
+  --surface-0: oklch(99% 0.006 220);  /* base card */
+  --surface-1: oklch(99.5% 0.004 220);
+  --surface-2: #ffffff;
+
+  /* Shadows — elevation scale */
+  --shadow-xs: 0 1px 2px rgb(15 23 42 / 0.04), 0 1px 1px rgb(15 23 42 / 0.04);
+  --shadow-sm: 0 1px 3px rgb(15 23 42 / 0.06), 0 1px 2px rgb(15 23 42 / 0.04);
+  --shadow-md: 0 4px 10px -2px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+  --shadow-lg: 0 10px 25px -5px rgb(15 23 42 / 0.10), 0 4px 10px -4px rgb(15 23 42 / 0.04);
+  --shadow-xl: 0 20px 40px -10px rgb(15 23 42 / 0.14), 0 8px 16px -6px rgb(15 23 42 / 0.06);
+
+  /* Tailwind aliases so existing code keeps working + new semantic names */
+  --color-pri:     var(--brand-500);
+  --color-pri-d:   var(--brand-700);
+  --color-pri-l:   var(--brand-50);
+  --color-acc:     var(--brand-400);
+  --color-bg:      var(--neutral-50);
+  --color-panel:   var(--surface-0);
+  --color-text:    var(--neutral-800);
+  --color-muted:   var(--neutral-500);
+  --color-bd:      var(--neutral-200);
+  --color-danger:  var(--status-danger);
+  --color-warn:    var(--status-warn);
+  --color-success: var(--status-success);
+  --color-info:    var(--status-info);
+  --color-purple:  oklch(62% 0.19 290);
+  --color-amber:   oklch(70% 0.18 70);
 }
 
+/* ─── Base Reset + Typography ─── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
 body {
-  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", system-ui, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--neutral-50);
+  color: var(--neutral-800);
   font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01";
 }
 
-/* 滚动条 */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+/* 1.25 type scale — five fixed steps for app UI */
+.t-caption   { font-size: 11px;  line-height: 1.4; letter-spacing: 0.01em; color: var(--neutral-500); }
+.t-secondary { font-size: 12px;  line-height: 1.5; color: var(--neutral-600); }
+.t-body      { font-size: 14px;  line-height: 1.55; color: var(--neutral-700); }
+.t-subhead   { font-size: 18px;  line-height: 1.35; font-weight: 600; color: var(--neutral-800); letter-spacing: -0.005em; }
+.t-heading   { font-size: 24px;  line-height: 1.25; font-weight: 700; color: var(--neutral-900); letter-spacing: -0.01em; }
+.t-kpi       { font-size: 28px;  line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; font-variant-numeric: tabular-nums; }
+.t-mono      { font-family: "SF Mono", "JetBrains Mono", ui-monospace, "Cascadia Code", Menlo, monospace; font-variant-numeric: tabular-nums; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--neutral-300); border-radius: 4px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--neutral-400); border: 2px solid transparent; background-clip: content-box; }
+
+/* ─── HMI Animations ─── */
+@keyframes flow { 0% { stroke-dashoffset: 24; } 100% { stroke-dashoffset: 0; } }
+.animate-flow { animation: flow 1.4s linear infinite; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
 }
-::-webkit-scrollbar-track {
-  background: transparent;
+.pulse-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+@keyframes ring-green {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklch, var(--status-success) 55%, transparent); }
+  100% { box-shadow: 0 0 0 10px color-mix(in oklch, var(--status-success) 0%, transparent); }
 }
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+.pulse-green { animation: ring-green 1.8s ease-out infinite; }
+
+@keyframes ring-red {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklch, var(--status-danger) 60%, transparent); }
+  100% { box-shadow: 0 0 0 12px color-mix(in oklch, var(--status-danger) 0%, transparent); }
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+.pulse-red { animation: ring-red 1.2s ease-out infinite; }
+
+@keyframes ring-amber {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklch, var(--status-warn) 55%, transparent); }
+  100% { box-shadow: 0 0 0 10px color-mix(in oklch, var(--status-warn) 0%, transparent); }
+}
+.pulse-amber { animation: ring-amber 1.6s ease-out infinite; }
+
+/* ─── Hover / Focus / Active State Helpers ─── */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
-/* HMI 动画 */
-@keyframes flow {
-  0% { stroke-dashoffset: 20; }
-  100% { stroke-dashoffset: 0; }
-}
-.animate-flow {
-  animation: flow 1.2s linear infinite;
+/* ─── Card base — uniform surface ─── */
+.card {
+  background: var(--surface-0);
+  border: 1px solid var(--neutral-200);
+  border-radius: 10px;
+  box-shadow: var(--shadow-xs);
 }
 
-@keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
-  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+.card-hover:hover {
+  border-color: var(--neutral-300);
+  box-shadow: var(--shadow-sm);
 }
-.pulse-green { animation: pulse-green 1.5s ease-in-out infinite; }
 
-@keyframes pulse-red {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
-  50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+/* ─── Table polish ─── */
+.tbl { width: 100%; border-collapse: separate; border-spacing: 0; }
+.tbl thead th {
+  position: sticky; top: 0;
+  background: var(--neutral-50);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--neutral-600);
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--neutral-200);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
-.pulse-red { animation: pulse-red 0.8s ease-in-out infinite; }
+.tbl tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--neutral-100);
+  font-size: 13px;
+  color: var(--neutral-700);
+}
+.tbl tbody tr:hover td { background: oklch(96.5% 0.01 200); }
+.tbl tbody tr:last-child td { border-bottom: none; }
 
-/* 跑马灯 */
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+/* ─── Button polish ─── */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  white-space: nowrap;
 }
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+.btn-primary {
+  background: var(--brand-500); color: #fff;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.10);
 }
+.btn-primary:hover { background: var(--brand-600); }
+.btn-primary:active { background: var(--brand-700); }
+.btn-ghost { background: transparent; color: var(--neutral-700); border-color: var(--neutral-200); }
+.btn-ghost:hover { background: var(--neutral-100); border-color: var(--neutral-300); }
+
+/* ─── Utility: brand scroll marker on focus rings ─── */
+*:focus-visible { outline: 2px solid var(--brand-500); outline-offset: 2px; border-radius: 4px; }
+
+/* ─── Data density — allow tight rows where truly needed (HMI tables) ─── */
+.dense .tbl thead th { padding: 6px 10px; font-size: 11px; }
+.dense .tbl tbody td { padding: 5px 10px; font-size: 12px; }
