@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import L, { Map as LMap, Marker, Popup, TileLayer } from 'leaflet';
 import { Bell, Droplets, Gauge, Activity, Zap, AlertTriangle, MapPin, ExternalLink, ChevronRight, Radio } from 'lucide-react';
 import { sites, alarms } from '@/data/mockData';
@@ -43,6 +43,7 @@ export function OverviewPage() {
   const mapRef = useRef<LMap | null>(null);
   const markersRef = useRef<Marker[]>([]);
   const [selected, setSelected] = useState<SitePoint | null>(null);
+  const navigate = useNavigate()
   const [tileReady, setTileReady] = useState(false);
 
   useEffect(() => {
@@ -112,7 +113,11 @@ export function OverviewPage() {
       });
 
       const m = L.marker([p.lat, p.lng], { icon }).addTo(map);
-      m.on('click', () => setSelected(p));
+      m.on('click', () => {
+        setSelected(p);
+        try { map.flyTo([p.lat, p.lng], Math.max(map.getZoom(), 13), { duration: 0.6 }); } catch {}
+        setTimeout(() => navigate(`/page/${p.id.toLowerCase()}`), 650);
+      });
       markersRef.current.push(m);
     });
 
