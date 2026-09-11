@@ -41,14 +41,14 @@ export function LoginPage() {
             <Wind size={22} />
           </div>
           <div>
-            <div className="text-[15px] font-semibold leading-tight tracking-wide">湿地智慧生态管理平台</div>
+            <div className="text-[15px] font-semibold leading-tight tracking-wide">赣州市中心城区污水处理智慧运营平台</div>
             <div className="text-[11px] opacity-60 mt-0.5">WETLAND · SMART · ECOLOGICAL</div>
           </div>
         </div>
 
         <div>
           <h1 className="text-[42px] leading-[1.15] font-bold tracking-tight mb-5">
-            守护一片湿地<br />
+            守护赣江一汪清水<br />
             <span className="opacity-70">让每一滴水都清澈可溯</span>
           </h1>
           <div className="flex gap-5 text-[12.5px] text-white/70">
@@ -64,7 +64,7 @@ export function LoginPage() {
           </div>
         </div>
 
-        <div className="text-[11px] text-white/50">© 2026 智慧湿地生态科技 · 工业互联网架构 v3.2</div>
+        <div className="text-[11px] text-white/50">© 2026 智慧赣州水务智慧科技 · 工业互联网架构 v3.2</div>
       </div>
 
       {/* Right login card */}
@@ -73,7 +73,7 @@ export function LoginPage() {
           {/* Mobile brand */}
           <div className="lg:hidden flex items-center gap-2 mb-6 text-white">
             <Wind size={20} />
-            <div className="text-[13px] font-semibold">湿地智慧生态</div>
+            <div className="text-[13px] font-semibold">赣州污水智慧运营</div>
           </div>
 
           <div className="bg-[var(--surface-2)] rounded-2xl p-8 shadow-[var(--shadow-xl)] border border-white/10">
@@ -157,7 +157,7 @@ export function LoginPage() {
             </form>
           </div>
 
-          <p className="text-[11px] text-center text-white/50 mt-5">遇到问题？联系 400-888-0797 · admin@wetland.com</p>
+          <p className="text-[11px] text-center text-white/50 mt-5">遇到问题？联系 400-888-0797 · admin@gzwater.cn</p>
         </div>
       </div>
     </div>

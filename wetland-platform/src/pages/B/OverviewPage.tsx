@@ -18,7 +18,7 @@ export function OverviewPage() {
                 [{a.level}] {a.time} | {a.site} | {a.location} | {a.description} {a.currentValue && `(${a.currentValue})`} {a.setValue && `| 设定${a.setValue}`}
               </span>
             ))}
-            <span className="mx-6 opacity-80">[提示] 2026-08-18 06:00:00 | 白塔污泥厂 | 车间温度 | 26℃</span>
+            <span className="mx-6 opacity-80">[提示] 2026-08-18 06:00:00 | 白塔污泥处置 | 车间温度 | 26℃</span>
           </div>
         </div>
       </div>

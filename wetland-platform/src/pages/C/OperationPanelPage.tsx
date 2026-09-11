@@ -75,7 +75,7 @@ export function OperationPanelPage() {
         <div className="flex items-center gap-3">
           <h2 className="text-base font-bold text-gray-800">进水泵站及格栅</h2>
           <span className="text-[11px] text-gray-400 font-mono bg-gray-100 px-1.5 py-0.5 rounded">C01</span>
-          <span className="text-[11px] text-gray-500">| 所属子项：蓉江新区再生水厂一期</span>
+          <span className="text-[11px] text-gray-500">| 所属子项：蓉江新区污水处理厂二期</span>
         </div>
         <div className="flex items-center gap-3 text-xs">
           <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>远程控制权</span>

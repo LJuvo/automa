@@ -17,7 +17,7 @@ export function UserProfilePage() {
           <span className="mt-2 px-2.5 py-0.5 rounded text-xs font-semibold bg-blue-100 text-blue-700">工程师 Level 3</span>
         </div>
         <div className="mt-5 border-t border-gray-100 pt-4 space-y-2 text-xs">
-          <div className="flex justify-between"><span className="text-gray-500">所属组织</span><span>蓉江新区厂</span></div>
+          <div className="flex justify-between"><span className="text-gray-500">所属组织</span><span>蓉江新区二期</span></div>
           <div className="flex justify-between"><span className="text-gray-500">注册时间</span><span>2025-03-15</span></div>
           <div className="flex justify-between"><span className="text-gray-500">最后登录</span><span className="font-mono">10:15:22</span></div>
           <div className="flex justify-between"><span className="text-gray-500">登录IP</span><span className="font-mono">10.30.177.52</span></div>
@@ -49,7 +49,7 @@ export function UserProfilePage() {
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-xs">
               {[
                 ['姓名', '张工'], ['账号', 'zhanggong'], ['角色', '工程师 (L3)'],
-                ['所属组织', '蓉江新区再生水厂'], ['手机', '138****5678'], ['邮箱', 'zhang@wetland.com'],
+                ['所属组织', '蓉江新区污水处理厂二期'], ['手机', '138****5678'], ['邮箱', 'zhang@gzwater.cn'],
                 ['工号', 'EMP-2023-018'], ['值班组', '白班A组'], ['上级', '赵管理'],
               ].map(([k, v]) => (
                 <div key={k} className="flex">

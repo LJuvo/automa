@@ -2,12 +2,12 @@ import { useParams, Link } from 'react-router-dom';
 import { Activity, ArrowRight, AlertTriangle, Bell, Gauge, Thermometer, Droplets, Zap, MapPin } from 'lucide-react';
 
 const stations: Record<string, { name: string; sub: string; flow: string; status: 'normal' | 'alarm' | 'offline'; capacity: string }> = {
-  b02: { name: '建春湿地公园再生水站', sub: '2.0 万 m³/d', flow: '620', status: 'normal', capacity: '20000' },
-  b03: { name: '金风梅园再生水处理厂', sub: '3.0 万 m³/d', flow: '860', status: 'normal', capacity: '30000' },
-  b04: { name: '沙石污水处理厂一期',   sub: '2.0 万 m³/d', flow: '580', status: 'alarm',  capacity: '20000' },
-  b05: { name: '蓉江新区再生水厂一期', sub: '4.0 万 m³/d', flow: '1240', status: 'normal', capacity: '40000' },
-  b06: { name: '水东水质净化厂',       sub: '2.5 万 m³/d', flow: '680', status: 'normal', capacity: '25000' },
-  b07: { name: '白塔污泥处理处置二期', sub: '100 吨/d',    flow: '100',  status: 'normal', capacity: '100' },
+  b02: { name: '建春污水处理厂一期', sub: '2.0 万 m³/d', flow: '620', status: 'normal', capacity: '20000' },
+  b03: { name: '金风梅园污水处理厂', sub: '3.0 万 m³/d', flow: '860', status: 'normal', capacity: '30000' },
+  b04: { name: '沙石污水处理厂',   sub: '2.0 万 m³/d', flow: '580', status: 'alarm',  capacity: '20000' },
+  b05: { name: '蓉江新区污水处理厂二期', sub: '4.0 万 m³/d', flow: '1240', status: 'normal', capacity: '40000' },
+  b06: { name: '水东再生水厂',       sub: '2.5 万 m³/d', flow: '680', status: 'normal', capacity: '25000' },
+  b07: { name: '白塔污泥处理处置中心', sub: '100 吨/d',    flow: '100',  status: 'normal', capacity: '100' },
 };
 
 /* 8 standard process segments — 每个站用同一模板 */

@@ -10,12 +10,12 @@ const kpis = [
 ];
 
 const sites = [
-  { id: 'B02', name: '建春湿地站', status: 'normal', flow: '620', capacity: '2.0万' },
-  { id: 'B03', name: '金风梅园厂', status: 'normal', flow: '860', capacity: '3.0万' },
-  { id: 'B04', name: '沙石一期',   status: 'alarm',  flow: '580', capacity: '2.0万' },
-  { id: 'B05', name: '蓉江新区厂', status: 'normal', flow: '1240', capacity: '4.0万' },
+  { id: 'B02', name: '建春污水厂', status: 'normal', flow: '620', capacity: '2.0万' },
+  { id: 'B03', name: '金风梅园污水厂', status: 'normal', flow: '860', capacity: '3.0万' },
+  { id: 'B04', name: '沙石污水厂',   status: 'alarm',  flow: '580', capacity: '2.0万' },
+  { id: 'B05', name: '蓉江新区二期', status: 'normal', flow: '1240', capacity: '4.0万' },
   { id: 'B06', name: '水东净化厂', status: 'normal', flow: '680', capacity: '2.5万' },
-  { id: 'B07', name: '白塔污泥厂', status: 'normal', flow: '100', capacity: '100吨' },
+  { id: 'B07', name: '白塔污泥处置', status: 'normal', flow: '100', capacity: '100吨' },
 ];
 
 const quickLinks = [
@@ -191,7 +191,7 @@ export function WorkbenchPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-500)] mt-1.5 shrink-0"></span>
             <div>
               <div className="font-medium text-[var(--neutral-800)]">计划停机维护通知</div>
-              <div className="text-[11.5px] text-[var(--neutral-500)] mt-0.5">蓉江新区厂 8月20日 00:00-04:00 进行高压柜年检</div>
+              <div className="text-[11.5px] text-[var(--neutral-500)] mt-0.5">蓉江新区二期 8月20日 00:00-04:00 进行高压柜年检</div>
             </div>
           </div>
           <div className="flex items-start gap-2 border border-[var(--neutral-200)] rounded-lg p-3">

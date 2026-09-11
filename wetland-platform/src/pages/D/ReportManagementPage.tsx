@@ -19,7 +19,7 @@ const reports: ReportTask[] = [
   { id: 'R002', name: '蓉江新区月综合报表', type: '月报', site: '蓉江新区再生水厂', schedule: '每月1日 09:00', recipients: 8, status: '运行中', lastRun: '2026-08-01 09:00:15', nextRun: '2026-09-01 09:00', format: 'PDF' },
   { id: 'R003', name: '沙石厂运行日报', type: '日报', site: '沙石污水处理厂', schedule: '每日 05:30', recipients: 2, status: '运行中', lastRun: '2026-08-18 05:30:08', nextRun: '2026-08-19 05:30', format: 'Excel' },
   { id: 'R004', name: '全厂周报（水质+能耗）', type: '周报', site: '全部子项', schedule: '每周一 08:00', recipients: 12, status: '运行中', lastRun: '2026-08-17 08:00:30', nextRun: '2026-08-24 08:00', format: 'PDF' },
-  { id: 'R005', name: '白塔污泥厂月报', type: '月报', site: '白塔污泥处理厂', schedule: '每月1日 10:00', recipients: 5, status: '已停止', lastRun: '2026-07-01 10:00:00', nextRun: '—', format: 'PDF' },
+  { id: 'R005', name: '白塔污泥处置月报', type: '月报', site: '白塔污泥处理厂', schedule: '每月1日 10:00', recipients: 5, status: '已停止', lastRun: '2026-07-01 10:00:00', nextRun: '—', format: 'PDF' },
   { id: 'R006', name: '年度碳减排核算报告', type: '年报', site: '全部子项', schedule: '每年1月10日', recipients: 15, status: '运行中', lastRun: '2026-01-10 14:00:00', nextRun: '2027-01-10', format: 'PDF' },
   { id: 'R007', name: '临时：7月能耗分析', type: '自定义', site: '全部子项', schedule: '手动触发', recipients: 1, status: '待生成', lastRun: '—', nextRun: '手动生成', format: 'Excel' },
 ];

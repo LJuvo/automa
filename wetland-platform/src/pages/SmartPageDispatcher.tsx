@@ -11,12 +11,12 @@ import { useState } from 'react';
 // ===== E 系列差异化数据 =====
 type SiteRow = { id: string; name: string; code: string; capacity: string; flow: string; status: string; manager: string; location: string };
 const siteData: SiteRow[] = [
-  { id: 'S01', name: '建春湿地公园再生水站', code: 'B02', capacity: '2.0万 m³/d', flow: '620 m³/h', status: '正常', manager: '李工', location: '蓉江新区' },
-  { id: 'S02', name: '金风梅园再生水处理厂', code: 'B03', capacity: '3.0万 m³/d', flow: '860 m³/h', status: '正常', manager: '孙工', location: '赣县区' },
-  { id: 'S03', name: '沙石污水处理厂一期', code: 'B04', capacity: '2.0万 m³/d', flow: '580 m³/h', status: '报警', manager: '周工', location: '章贡区' },
-  { id: 'S04', name: '蓉江新区再生水厂一期', code: 'B05', capacity: '4.0万 m³/d', flow: '1240 m³/h', status: '正常', manager: '张工', location: '蓉江新区' },
-  { id: 'S05', name: '水东水质净化厂', code: 'B06', capacity: '2.5万 m³/d', flow: '680 m³/h', status: '正常', manager: '孙工', location: '赣县区' },
-  { id: 'S06', name: '白塔污泥处理处置二期', code: 'B07', capacity: '100 吨/d', flow: '100 吨/d', status: '正常', manager: '李工', location: '章贡区' },
+  { id: 'S01', name: '建春污水处理厂一期', code: 'B02', capacity: '2.0万 m³/d', flow: '620 m³/h', status: '正常', manager: '李工', location: '蓉江新区' },
+  { id: 'S02', name: '金风梅园污水处理厂', code: 'B03', capacity: '3.0万 m³/d', flow: '860 m³/h', status: '正常', manager: '孙工', location: '赣县区' },
+  { id: 'S03', name: '沙石污水处理厂', code: 'B04', capacity: '2.0万 m³/d', flow: '580 m³/h', status: '报警', manager: '周工', location: '章贡区' },
+  { id: 'S04', name: '蓉江新区污水处理厂二期', code: 'B05', capacity: '4.0万 m³/d', flow: '1240 m³/h', status: '正常', manager: '张工', location: '蓉江新区' },
+  { id: 'S05', name: '水东再生水厂', code: 'B06', capacity: '2.5万 m³/d', flow: '680 m³/h', status: '正常', manager: '孙工', location: '赣县区' },
+  { id: 'S06', name: '白塔污泥处理处置中心', code: 'B07', capacity: '100 吨/d', flow: '100 吨/d', status: '正常', manager: '李工', location: '章贡区' },
 ];
 
 type DeviceRow = { id: string; name: string; type: string; site: string; status: string; runHours: number; nextMaintain: string };
@@ -25,7 +25,7 @@ const deviceData: DeviceRow[] = [
   { id: 'P-002', name: '2#提升泵', type: '离心泵', site: '蓉江新区', status: '运行', runHours: 1842, nextMaintain: '2026-09-20' },
   { id: 'B-001', name: '1#鼓风机', type: '罗茨风机', site: '蓉江新区', status: '运行', runHours: 2150, nextMaintain: '2026-10-15' },
   { id: 'B-002', name: '2#鼓风机', type: '罗茨风机', site: '蓉江新区', status: '故障', runHours: 2100, nextMaintain: '2026-08-20' },
-  { id: 'D-001', name: '1#带式脱水机', type: '带式', site: '白塔污泥厂', status: '运行', runHours: 980, nextMaintain: '2026-11-05' },
+  { id: 'D-001', name: '1#带式脱水机', type: '带式', site: '白塔污泥处置', status: '运行', runHours: 980, nextMaintain: '2026-11-05' },
   { id: 'G-001', name: '粗格栅', type: '回转式', site: '沙石厂', status: '运行', runHours: 3520, nextMaintain: '2026-09-30' },
   { id: 'F-001', name: '1#搅拌机', type: '潜水式', site: '蓉江新区', status: '正常', runHours: 8760, nextMaintain: '2027-03-01' },
 ];
@@ -35,7 +35,7 @@ const videoData: VideoRow[] = [
   { id: 'V001', name: '进水泵站前院', site: '蓉江新区', location: '北门', status: '在线', resolution: '1920×1080' },
   { id: 'V002', name: '生化池1#区全景', site: '蓉江新区', location: '生化池', status: '在线', resolution: '2560×1440' },
   { id: 'V003', name: '出水监测间', site: '蓉江新区', location: '出水区', status: '在线', resolution: '1920×1080' },
-  { id: 'V004', name: '污泥脱水车间', site: '白塔污泥厂', location: '脱水间', status: '离线', resolution: '1920×1080' },
+  { id: 'V004', name: '污泥脱水车间', site: '白塔污泥处置', location: '脱水间', status: '离线', resolution: '1920×1080' },
 ];
 
 type MonitorRow = { id: string; name: string; type: string; site: string; value: string; unit: string; status: string };

@@ -15,14 +15,14 @@ type Alarm = {
 };
 
 const alarms: Alarm[] = [
-  { id: 'ALM-20260818-002', time: '2026-08-18 10:25:33', level: '紧急', site: '沙石一期',   device: '1#鼓风机',  message: '振动值超高触发联锁停车',       value: '9.2mm/s > 8.0', status: '活跃' },
-  { id: 'ALM-20260818-003', time: '2026-08-18 09:48:22', level: '重要', site: '蓉江新区厂', device: '3#提升泵',  message: '电机电流持续超过额定 115%',    value: '58A > 52A',     status: '活跃' },
-  { id: 'ALM-20260818-004', time: '2026-08-18 09:30:00', level: '一般', site: '金风梅园厂', device: '加药泵 B',  message: '出口流量低于设定值 30%',       value: '85L/h < 120',   status: '已确认', handler: '张工' },
-  { id: 'ALM-20260818-005', time: '2026-08-18 08:32:15', level: '一般', site: '建春湿地站', device: '二沉池 DO', message: '缺氧区 ORP 持续下降 -420mV',   value: '-420mV',        status: '已确认', handler: '李工' },
+  { id: 'ALM-20260818-002', time: '2026-08-18 10:25:33', level: '紧急', site: '沙石污水厂',   device: '1#鼓风机',  message: '振动值超高触发联锁停车',       value: '9.2mm/s > 8.0', status: '活跃' },
+  { id: 'ALM-20260818-003', time: '2026-08-18 09:48:22', level: '重要', site: '蓉江新区二期', device: '3#提升泵',  message: '电机电流持续超过额定 115%',    value: '58A > 52A',     status: '活跃' },
+  { id: 'ALM-20260818-004', time: '2026-08-18 09:30:00', level: '一般', site: '金风梅园污水厂', device: '加药泵 B',  message: '出口流量低于设定值 30%',       value: '85L/h < 120',   status: '已确认', handler: '张工' },
+  { id: 'ALM-20260818-005', time: '2026-08-18 08:32:15', level: '一般', site: '建春污水厂', device: '二沉池 DO', message: '缺氧区 ORP 持续下降 -420mV',   value: '-420mV',        status: '已确认', handler: '李工' },
   { id: 'ALM-20260818-006', time: '2026-08-18 07:15:00', level: '提示', site: '水东净化厂', device: '进水流量计', message: '通讯瞬时中断（已恢复）',       value: '通讯超时 5s',   status: '已处理', handler: '系统' },
-  { id: 'ALM-20260817-011', time: '2026-08-17 22:10:00', level: '重要', site: '白塔污泥厂', device: '带式脱水机', message: '滤带张力传感器异常',           value: '0kN',           status: '已处理', handler: '张工' },
-  { id: 'ALM-20260817-009', time: '2026-08-17 18:40:00', level: '一般', site: '蓉江新区厂', device: '主风机',    message: '轴承温度偏高 72℃',             value: '72℃ > 70',      status: '已处理', handler: '王操作' },
-  { id: 'ALM-20260817-007', time: '2026-08-17 14:20:00', level: '紧急', site: '沙石一期',   device: '2#回流泵',  message: '变频器过压保护动作',           value: 'DC-BUS 780V',   status: '已处理', handler: '赵管理' },
+  { id: 'ALM-20260817-011', time: '2026-08-17 22:10:00', level: '重要', site: '白塔污泥处置', device: '带式脱水机', message: '滤带张力传感器异常',           value: '0kN',           status: '已处理', handler: '张工' },
+  { id: 'ALM-20260817-009', time: '2026-08-17 18:40:00', level: '一般', site: '蓉江新区二期', device: '主风机',    message: '轴承温度偏高 72℃',             value: '72℃ > 70',      status: '已处理', handler: '王操作' },
+  { id: 'ALM-20260817-007', time: '2026-08-17 14:20:00', level: '紧急', site: '沙石污水厂',   device: '2#回流泵',  message: '变频器过压保护动作',           value: 'DC-BUS 780V',   status: '已处理', handler: '赵管理' },
 ];
 
 const levelColor = (l: Alarm['level']) => ({
