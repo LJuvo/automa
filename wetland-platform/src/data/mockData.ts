@@ -363,7 +363,7 @@ export type DeviceItem = {
   type: string;
   site: string;
   mode: '自动' | '手动';
-  status: '运行' | '停止' | '故障';
+  status: '运行' | '停止' | '故障' | '投运' | '就绪';
   frequency?: string;
   runHours: number;
   protection: string;
